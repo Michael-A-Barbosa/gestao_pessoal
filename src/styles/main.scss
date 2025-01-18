@@ -1,0 +1,9 @@
+// Importar funções do Bootstrap (necessárias para variáveis)
+@import "~bootstrap/scss/functions";
+
+// Sobrescrever variáveis do Bootstrap antes de carregar os estilos
+$primary: #4CAF50; // Cor verde para a classe text-primary
+
+// Importar as variáveis e os estilos principais do Bootstrap
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/bootstrap";
