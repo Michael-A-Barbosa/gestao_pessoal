@@ -8,6 +8,7 @@
         "lint": "vue-cli-service lint"
     },
     "dependencies": {
+        "axios": "^1.7.9",
         "bootstrap": "^5.3.3",
         "core-js": "^3.8.3",
         "font-awesome": "^4.7.0",
@@ -37,6 +38,7 @@
         "no-multiple-empty-lines": {
             "max": 2,
             "maxEOF": 1
-        }
+        },
+        "insertFinalNewline": false
     }
 }
