@@ -39,6 +39,7 @@
             "max": 2,
             "maxEOF": 1
         },
-        "insertFinalNewline": false
+        "insertFinalNewline": false,
+        "endOfLine": "crlf"
     }
 }

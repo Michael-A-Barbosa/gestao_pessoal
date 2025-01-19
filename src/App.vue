@@ -4,7 +4,7 @@
             <h2>Login</h2>
             <form @submit.prevent="handleLogin">
                 <div>
-                    <label for="login">Login</label>
+                    <label for="login">Usuário</label>
                     <input type="text" v-model="login" required />
                 </div>
                 <div>
@@ -42,9 +42,6 @@ export default {
     methods: {
         async handleLogin() {
             try {
-                console.log(this.login);
-                console.log(this.senha);
-                // Realiza uma requisição POST para verificar se o login e senha são válidos
                 const response = await getData(
                     `get_usuario?LOGIN=${this.login}&SENHA=${this.senha}`
                 );
