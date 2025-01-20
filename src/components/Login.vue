@@ -1,18 +1,38 @@
 <template>
-    <div class="login-container">
-        <div class="login-box">
-            <h2>Login</h2>
+    <div
+        class="login-container d-flex justify-content-center align-items-center"
+    >
+        <div class="login-box glass-effect p-4">
+            <h2 class="text-white text-center mb-4">Login</h2>
             <form @submit.prevent="handleLogin">
-                <div>
-                    <label for="login">Usuário</label>
-                    <input type="text" v-model="login" required />
+                <div class="mb-3">
+                    <label for="login" class="form-label text-white"
+                        >Usuário</label
+                    >
+                    <input
+                        type="text"
+                        id="login"
+                        class="form-control bg-transparent text-white"
+                        v-model="login"
+                        required
+                    />
                 </div>
-                <div>
-                    <label for="senha">Senha</label>
-                    <input type="password" v-model="senha" required />
+                <div class="mb-3">
+                    <label for="senha" class="form-label text-white"
+                        >Senha</label
+                    >
+                    <input
+                        type="password"
+                        id="senha"
+                        class="form-control bg-transparent text-white"
+                        v-model="senha"
+                        required
+                    />
                 </div>
-                <button type="submit">Entrar</button>
-                <div v-if="errorMessage" class="error-message">
+                <button type="submit" class="btn btn-primary w-100">
+                    Entrar
+                </button>
+                <div v-if="errorMessage" class="error-message text-danger mt-3">
                     {{ errorMessage }}
                 </div>
             </form>
@@ -54,51 +74,69 @@ export default {
 </script>
 
 <style scoped>
-/* Estilos da tela de login */
+/* Estilos Glassmorphism */
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    height: 100vh;    
 }
 
 .login-box {
-    border: 1px solid #ccc;
+    max-width: 400px;
+    width: 100%;
     padding: 20px;
-    width: 300px;
-    border-radius: 5px;
-    text-align: center;
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    background-color: rgba(255, 255, 255, 0.15); /* Fundo com leve opacidade */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Bordas visíveis */
     border-radius: 5px;
-    border: 1px solid #ccc;
+    padding: 10px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    background-color: rgba(255, 255, 255, 0.25); /* Fundo mais claro ao focar */
+    border: 1px solid #007bff; /* Realce ao focar */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.8); /* Glow azul ao focar */
 }
 
 button {
-    width: 100%;
-    padding: 10px;
     border-radius: 5px;
-    background-color: #4caf50;
+    padding: 10px;
+    background-color: #007bff;
     color: white;
-    border: none;
-    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #0056b3;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: white;
 }
 
 .error-message {
-    color: red;
-    margin-top: 10px;
+    font-size: 0.9rem;
 }
 
-.main-content {
-    text-align: center;
-    padding: 20px;
+@media (max-width: 576px) {
+    .login-box {
+        width: 100%;
+        margin: 10px;
+    }
 }
 </style>
